@@ -1,0 +1,30 @@
+metrics:
+  number_of_employees:
+    description: "Total number of employees at end of year"
+    synonyms:
+      - "jumlah karyawan"
+      - "total employees"
+      - "headcount"
+    extraction_prompt: |
+      Extract the number of employees mentioned for the specified fiscal year.
+      Return only the numeric value without formatting or separators.
+    unit: "people"
+  total_assets:
+    description: "Total assets reported in the statement of financial position"
+    synonyms:
+      - "total assets"
+      - "jumlah aset"
+      - "asset base"
+    extraction_prompt: |
+      Extract the total assets value (usually in IDR) for the specified fiscal year.
+      Prefer consolidated figures when available.
+    unit: "currency"
+  revenue:
+    description: "Revenue or net sales"
+    synonyms:
+      - "pendapatan"
+      - "revenue"
+      - "net sales"
+    extraction_prompt: |
+      Extract revenue for the specified fiscal year. If multiple segments are shown, prefer consolidated totals.
+    unit: "currency"
